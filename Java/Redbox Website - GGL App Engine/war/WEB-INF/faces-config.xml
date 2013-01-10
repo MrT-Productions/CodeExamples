@@ -1,0 +1,35 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+	version="2.0">
+	<application>
+		<locale-config>
+			<default-locale>en</default-locale>
+			<supported-locale>es</supported-locale>
+		</locale-config>
+		<resource-bundle>
+			<base-name>redboxMovies.movies</base-name>
+			<var>in</var>
+		</resource-bundle>
+	</application>
+	<lifecycle><phase-listener>redboxMovies.ForceSessionSerializationPhaseListener</phase-listener></lifecycle>
+	<managed-bean>
+		<managed-bean-name>t</managed-bean-name>
+		<managed-bean-class>redboxMovies.RedBoxBean</managed-bean-class>
+		<managed-bean-scope>view</managed-bean-scope>
+	</managed-bean>
+	<navigation-rule>
+		<from-view-id>/redbox.xhtml</from-view-id>
+		<navigation-case>
+		<from-outcome>redbox</from-outcome>
+		<to-view-id>/redbox.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>continue</from-outcome>
+			<to-view-id>/redboxSelection.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+</faces-config>

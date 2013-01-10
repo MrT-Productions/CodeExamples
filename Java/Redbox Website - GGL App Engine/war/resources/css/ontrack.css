@@ -1,0 +1,41 @@
+@charset "utf-8";
+/*Copyright (c) Thonda Taylor II 14 Oct, 2011 */
+.button {
+	text-align: center;
+	margin-top: -10px;
+	margin-bottom: 8px;
+}
+
+h1 {
+	text-align: center
+}
+
+.border {
+	border: 1.5px solid black;
+}
+
+.spread {
+	width: 100%;
+}
+
+.oddRow {
+	background-color: lightGray;
+	border-top: 1.5px solid black;
+}
+
+.grayRight {
+	background-color: lightGray;
+	border-top: 1.5px solid black;
+	border-right: 1.5px solid black;
+}
+
+.evenRow {
+	border-top: 1.5px solid black;
+}
+.topRight {
+	border-top: 1.5px solid black;
+	border-right: 1.5px solid black;
+}
+.error{
+	color: red;
+}

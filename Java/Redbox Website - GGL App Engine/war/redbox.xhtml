@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+<!-- (C) Copyright 2011 by Thonda Taylor II -->
+<h:outputStylesheet library="css" name="movieSelection.css" />
+<title>#{in.tabTitle}</title>
+</h:head>
+<h:body>
+<h:form>
+<div>
+<h:panelGrid columns="3" styleClass="right">
+<h:panelGroup>
+<h:commandButton value="#{in.reset}" action="#{t.reset}"/>
+<h:commandButton id="a" value="#{in.all}" action="#{t.allClick}" immediate="true" styleClass="#{t.allClick}">
+<f:ajax render="a b c d f h myTable aa xx" /></h:commandButton>
+<h:commandButton id="b" value="#{in.action}" action="#{t.actionClick}" styleClass="#{t.actionClick}">
+<f:ajax render="a b c d f h myTable aa xx" /></h:commandButton>
+<h:commandButton id="c" value="#{in.comedy}" action="#{t.comedyClick}" styleClass="#{t.comedyClick}">
+<f:ajax render="a b c d f h myTable aa xx" /></h:commandButton>
+<h:commandButton id="d" value="#{in.drama}" action="#{t.dramaClick}" styleClass="#{t.dramaClick}">
+<f:ajax render="a b c d f h myTable aa xx" /></h:commandButton>
+<h:commandButton id="f" value="#{in.family}" action="#{t.familyClick}" styleClass="#{t.familyClick}">
+<f:ajax render="a b c d f h myTable aa xx" /></h:commandButton>
+<h:commandButton id="h" value="#{in.horror}" action="#{t.horrorClick}" styleClass="#{t.horrorClick}">
+<f:ajax render="a b c d f h myTable aa xx" /></h:commandButton>
+</h:panelGroup>
+<h:selectOneMenu value="{t.ratingSort}"><f:ajax render="myTable" immediate="true" /><f:selectItems value="#{t.ratingItems}" /></h:selectOneMenu>
+<h:selectOneMenu value="#{t.sorting}"><f:ajax render="myTable" immediate="true" /><f:selectItems value="#{t.sortItems}" /></h:selectOneMenu>
+</h:panelGrid>
+</div>
+<br />
+<h:panelGroup><h:outputText id="aa" value="#{t.genreSort}" /> #{in.movies} <h:outputText  id="xx" value="#{t.ratingSort}" /></h:panelGroup>
+<hr />
+<h:dataTable id="myTable" class="center" value="#{t.sixMovies}" var="movie">
+<h:column><h:commandLink class="center" action="redboxSelection"><f:setPropertyActionListener target="#{t.movieInfo}" value="#{movie.movie1}" /><h:outputText value="#{movie.movie1.title}" /><br /><h:graphicImage url="#{movie.movie1.smallURL}" /></h:commandLink></h:column>
+<h:column><h:commandLink class="center" action="redboxSelection"><f:setPropertyActionListener target="#{t.movieInfo}" value="#{movie.movie2}" /><h:outputText value="#{movie.movie2.title}" /><br /><h:graphicImage url="#{movie.movie2.smallURL}" /></h:commandLink></h:column>
+<h:column><h:commandLink class="center" action="redboxSelection"><f:setPropertyActionListener target="#{t.movieInfo}" value="#{movie.movie3}" /><h:outputText value="#{movie.movie3.title}" /><br /><h:graphicImage url="#{movie.movie3.smallURL}" /></h:commandLink></h:column>
+<h:column><h:commandLink class="center" action="redboxSelection"><f:setPropertyActionListener target="#{t.movieInfo}" value="#{movie.movie4}" /><h:outputText value="#{movie.movie4.title}" /><br /><h:graphicImage url="#{movie.movie4.smallURL}" /></h:commandLink></h:column>
+<h:column><h:commandLink class="center" action="redboxSelection"><f:setPropertyActionListener target="#{t.movieInfo}" value="#{movie.movie5}" /><h:outputText value="#{movie.movie5.title}" /><br /><h:graphicImage url="#{movie.movie5.smallURL}" /></h:commandLink></h:column>
+<h:column><h:commandLink class="center" action="redboxSelection"><f:setPropertyActionListener target="#{t.movieInfo}" value="#{movie.movie6}" /><h:outputText value="#{movie.movie6.title}" /><br /><h:graphicImage url="#{movie.movie6.smallURL}" /></h:commandLink></h:column>
+</h:dataTable>
+<hr />
+<h5>#{in.srtw}</h5>
+
+</h:form>
+</h:body>
+</html>

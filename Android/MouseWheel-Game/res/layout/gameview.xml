@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+>
+    <edu.elon.cs.mobile.game.GameView
+        android:id="@+id/gameview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+    />
+	<RelativeLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	>
+	    <TextView
+    		android:id="@+id/textview"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:visibility="visible"
+    		android:layout_alignParentBottom="true"
+   			android:layout_alignParentRight="true"
+    		android:gravity="center_horizontal"
+    		android:textColor="#88FFFFFF"
+    		android:textSize="24sp"
+    	/>
+
+	    <TextView
+	        android:id="@+id/textView1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="97dp"
+	        android:text="TILT YOUR PHONE TO ROLL TO THE CHEESE"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	</RelativeLayout>
+</FrameLayout>

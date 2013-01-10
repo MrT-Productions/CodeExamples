@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <Button
+            android:id="@+id/lev1button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="57dp"
+            android:layout_marginTop="112dp"
+            android:text="Level 1" />
+
+        <Button
+            android:id="@+id/optionbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="34dp"
+            android:layout_toLeftOf="@+id/lev3button"
+            android:layout_toRightOf="@+id/lev1button"
+            android:text="Options" />
+
+        <Button
+            android:id="@+id/lev2button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/lev1button"
+            android:layout_alignBottom="@+id/lev1button"
+            android:layout_centerHorizontal="true"
+            android:text="Level 2" />
+
+        <Button
+            android:id="@+id/lev3button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/lev2button"
+            android:layout_alignBottom="@+id/lev2button"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="73dp"
+            android:text="Level 3" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/lev2button"
+            android:layout_marginRight="21dp"
+            android:layout_toLeftOf="@+id/lev2button"
+            android:src="@drawable/gamemouse" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/optionbutton"
+            android:layout_alignTop="@+id/lev3button"
+            android:src="@drawable/gamemouse" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lev2button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="21dp"
+            android:src="@drawable/gamemouse" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="43dp"
+            android:text="Pick a level... Play more to unlock"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </RelativeLayout>
+
+</FrameLayout>

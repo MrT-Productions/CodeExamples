@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+<!-- (C) Copyright 2011 by Thonda Taylor II -->
+<h:outputStylesheet library="css" name="movieSelection.css" />
+<title>#{t.movieInfo.title}</title>
+</h:head>
+<h:body>
+<h:form styleClass="noBorder">
+<h:panelGroup><h:commandButton styleClass="button" value="#{in.deleteButton}" action="#{t.delete}" /><h:commandButton styleClass="button" value="#{in.continueButtton}" action="redbox" /></h:panelGroup>
+<h:dataTable columnClass="top" var="movie" value="#{t.movieInfo}">
+<h:column><h:graphicImage url="#{t.movieInfo.bigURL}" /></h:column>
+<h:column><table>
+<tr><td> <h1><h:outputText value="#{t.movieInfo.title}" /></h1></td><tr><h:panelGroup><td><h:outputText styleClass="border" value="#{t.movieInfo.movieRating}" /> <h:outputText styleClass="border" value="#{t.movieInfo.runTime}" /></td><td><h:outputText value="#{t.movieInfo.numberRating}" /> average rating</td></h:panelGroup>
+<div><ui:repeat value="#{t.movieInfo}" var="movie">
+<tr><td><h:outputText value="#{movie.description}" /></td><td><h:panelGrid columns="2">
+Genres: <h:outputText value="#{movie.genres}" />
+Staring: <h:outputText value="#{movie.staring}" />
+Directors: <h:outputText value="#{movie.directors}" />
+Studio: <h:outputText value="#{movie.studio}" />
+Subtitles: <h:outputText value="#{movie.subtitles}" />
+Format: <h:outputText value="#{movie.format}" />
+</h:panelGrid></td></tr>
+</ui:repeat></div></tr>
+</tr>
+</table></h:column>
+</h:dataTable>
+
+</h:form>
+</h:body>
+</html>

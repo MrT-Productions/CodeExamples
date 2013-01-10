@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+
+.error {
+	border-color: red;
+	border-radius: 10px 10px 10px 10px;
+	border-style: solid;
+	color: red;
+}
+
+.button {
+	background-color: red;
+	color: white;
+}
+
+.red {
+	color: red;
+	border-color: red;
+}
+
+.black {
+	color: black;
+}
+
+.black2 {
+	color: black;
+	border-color: black;
+}
+
+.inputInvalid {
+	color: red;
+	border-color: red;
+}
+
+.ui-input-invalid {
+	color: red;
+	border-color: red;
+}
+
+/*<!-- Copyright (c) Thonda Taylor 28 Oct 2011 -->*/
