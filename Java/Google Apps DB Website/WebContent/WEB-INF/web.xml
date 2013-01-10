@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<display-name>TODThomework13</display-name>
+	<welcome-file-list>
+		<welcome-file>elonapp.jsp</welcome-file>
+		<welcome-file>/*</welcome-file>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<resource-ref id="ResourceRef_ElonDS">
+		<description>Connection to Datasource</description>
+		<res-ref-name>jdbc/ElonDS</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+		<res-sharing-scope>Shareable</res-sharing-scope>
+	</resource-ref>
+	
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>TODThomework13</realm-name>
+	</login-config>
+		
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>elonapp</web-resource-name>
+			<url-pattern>/elonapp.jsp</url-pattern>				
+			<url-pattern>/</url-pattern>
+		</web-resource-collection>
+			
+		<auth-constraint>
+			<role-name>ElonUser</role-name>
+		</auth-constraint>
+	</security-constraint>
+		
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>elonapp</web-resource-name>
+			<url-pattern>/elonapp.jsp</url-pattern>
+			<url-pattern>/</url-pattern>
+		</web-resource-collection>
+		
+		<auth-constraint>
+			<role-name>ElonAdmin</role-name>
+		</auth-constraint>
+	</security-constraint>
+		
+	<servlet>
+		<servlet-name>elonapp</servlet-name>
+		<jsp-file>/WEB-INF/elonapp.jsp</jsp-file>
+		<init-param>
+			<param-name>companyName</param-name>	
+			<param-value>Elon Phoenix Rising Apps Inc</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>elonapp</servlet-name>
+		<url-pattern>/elonapp.jsp</url-pattern>
+		<url-pattern>/TODThomework13/*</url-pattern>
+	</servlet-mapping>
+		
+	<servlet>
+		<servlet-name>ValidateDAO</servlet-name>
+		<jsp-file>/WEB-INF/ValidateDAO.jsp</jsp-file>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ValidateDAO</servlet-name>
+		<url-pattern>/ValidateDAO.jsp</url-pattern>
+	</servlet-mapping>
+		
+	<security-role>
+		<role-name>ElonAdmin</role-name>				
+	</security-role>
+		
+	<security-role>
+		<role-name>ElonUser</role-name>
+	</security-role>		
+</web-app>
